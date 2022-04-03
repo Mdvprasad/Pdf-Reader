@@ -1,0 +1,158 @@
+{
+    "data": [
+        {
+            "invoice": {
+                "id": 12345678,
+                "date": "02/03/2022",
+                "taxable": false,
+                "name": "Developer",
+                "sold_to_address": {
+                    "street1": "street 1",
+                    "street2": "street 2",
+                    "phone": 1234567890,
+                    "pincode": 500000
+                },
+                "bill_to_address": {
+                    "street1": "street 1",
+                    "street2": "street 2",
+                    "phone": 1234567890,
+                    "pincode": 500000
+                },
+                "ordered_items": [
+                    {
+                        "id": 1,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5
+                    },
+                    {
+                        "id": 2,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5
+                    }
+                ]
+            }
+        },
+        {
+            "invoice": {
+                "id": 12345670,
+                "date": "02/03/2022",
+                "taxable": true,
+                "name": "Developer",
+                "pan_no": "DIUEO1234D",
+                "gst_no": "GSTIN7282728292928",
+                "sold_to_address": {
+                    "street1": "street 1",
+                    "street2": "street 2",
+                    "phone": 1234567890,
+                    "pincode": 500000
+                },
+                "bill_to_address": {
+                    "street1": "street 1",
+                    "street2": "street 2",
+                    "phone": 1234567890,
+                    "pincode": 500000
+                },
+                "ordered_items": [
+                    {
+                        "id": 1,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 2,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 3,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 4,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 5,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 6,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 7,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 8,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 9,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 10,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 11,
+                        "description": "product1",
+                        "price": 2,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    },
+                    {
+                        "id": 12,
+                        "description": "product2",
+                        "price": 4,
+                        "quantity": 5,
+                        "tax_rate": 18,
+                        "tax_type": "GST"
+                    }
+                ]
+            }
+        }
+    ]
+}
