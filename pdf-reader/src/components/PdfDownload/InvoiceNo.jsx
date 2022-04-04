@@ -5,11 +5,11 @@ const styles = StyleSheet.create({
     invoiceNoContainer: {
         flexDirection: 'row',
         marginTop: 2,
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-start'
     },
     invoiceDateContainer: {
         flexDirection: 'row',
-        justifyContent: 'flex-end'
+        justifyContent: 'flex-start'
     },
     invoiceDate: {
         fontSize: 12,

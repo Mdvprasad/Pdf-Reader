@@ -61,7 +61,7 @@ const Invoice = ({ data }) => {
                     <View style={{ padding: "20px" }}>
                         <Image style={styles.logo} src={logo} fixed />
                         <View style={styles.subTitleContainer} fixed>
-                            <Text style={styles.subTitle}>Invoice</Text>
+                            <Text style={styles.subTitle}>Tax Invoice</Text>
                         </View>
 
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>

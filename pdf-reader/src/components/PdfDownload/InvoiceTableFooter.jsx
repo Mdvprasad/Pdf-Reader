@@ -14,15 +14,19 @@ const styles = StyleSheet.create({
     },
     description: {
         width: '78%',
-        textAlign: 'right',
+        textAlign: 'center',
         borderRightColor: borderColor,
         borderRightWidth: 1,
         padding: 4.5,
+        borderLeftColor: borderColor,
+        borderLeftWidth: 1,
     },
     total: {
         width: '22%',
-        textAlign: 'right',
+        textAlign: 'center',
         padding: 4.5,
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
 });
 
@@ -33,7 +37,7 @@ const InvoiceTableFooter = ({ items }) => {
     return (
         <View style={styles.row}>
             <Text style={styles.description}>TOTAL</Text>
-            <Text style={styles.total}>{Number.parseFloat(total).toFixed(2)}</Text>
+            <Text style={styles.total}>{`$${Number.parseFloat(total).toFixed(2)}`}</Text>
         </View>
     )
 };

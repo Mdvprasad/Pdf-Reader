@@ -18,7 +18,9 @@ const styles = StyleSheet.create({
         borderRightColor: borderColor,
         borderRightWidth: 1,
         textAlign: 'center',
-        padding: 5
+        padding: 5,
+        borderLeftColor: borderColor,
+        borderLeftWidth: 1,
     },
     description: {
         width: '30%',
@@ -49,22 +51,24 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     amount: {
-        width: '12%',
+        width: '22%',
         textAlign: 'center',
-        padding: 5,
+        padding: '5px 0',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
 });
 
 
 const InvoiceTableRow = ({ items }) => {
-    const rows = items.map(item =>
-        <View style={styles.row} key={item.id.toString()}>
+    const rows = items.map((item, id) =>
+        <View style={styles.row} key={item.id.toString()} break={id > 10 ? true : false}>
             <Text style={styles.sNo}>{item.id}</Text>
             <Text style={styles.description}>{item.description}</Text>
-            <Text style={styles.unit}>{item.price}</Text>
+            <Text style={styles.unit}>{`$${item.price}`}</Text>
             <Text style={styles.qty}>{item.quantity}</Text>
-            <Text style={styles.rate}>{(item.quantity * item.price).toFixed(2)}</Text>
-            <Text style={styles.amount}>{(item.quantity * item.price).toFixed(2)}</Text>
+            <Text style={styles.rate}>{`$${(item.quantity * item.price).toFixed(2)}`}</Text>
+            <Text style={styles.amount}>{`$${(item.quantity * item.price).toFixed(2)}`}</Text>
         </View>
     )
     return (<Fragment>{rows}</Fragment>)

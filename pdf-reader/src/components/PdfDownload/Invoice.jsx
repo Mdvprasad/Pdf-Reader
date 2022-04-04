@@ -57,7 +57,7 @@ const Invoice = ({ data }) => {
     if (invoice) {
         return (
             <Document>
-                <Page size="A4" style={styles.page}>
+                <Page size="A4" style={styles.page} wrap>
                     <View style={{ padding: "20px" }}>
                         <Image style={styles.logo} src={logo} fixed />
                         <View style={styles.subTitleContainer} fixed>

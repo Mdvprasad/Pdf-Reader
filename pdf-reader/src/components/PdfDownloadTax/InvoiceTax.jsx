@@ -58,11 +58,11 @@ const Invoice = ({ data }) => {
     if (invoice) {
         return (
             <Document>
-                <Page size="A4" style={styles.page}>
+                <Page size="A4" style={styles.page} wrap>
                     <View >
                         <Image style={styles.logo} src={logo} fixed />
                         <View style={styles.subTitleContainer} fixed>
-                            <Text style={styles.subTitle}>Invoice</Text>
+                            <Text style={styles.subTitle}>Tax Invoice</Text>
                         </View>
 
                         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>

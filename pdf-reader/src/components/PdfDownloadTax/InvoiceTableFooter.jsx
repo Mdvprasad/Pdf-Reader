@@ -11,29 +11,65 @@ const styles = StyleSheet.create({
         height: 28,
         fontSize: 12,
         fontStyle: 'bold',
+        flexGrow: '3'
     },
     description: {
-        width: '78%',
-        textAlign: 'right',
+        width: '46%',
+        textAlign: 'left',
         borderRightColor: borderColor,
         borderRightWidth: 1,
-        padding: 4.5,
+        padding: '4.7px 0',
+        height: 28,
+        borderLeftColor: borderColor,
+        borderLeftWidth: 1,
+    },
+    net: {
+        width: '10%',
+        textAlign: 'center',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
+        padding: '4.7px 0',
+        height: 28,
+    },
+    empty: {
+        width: "19%",
+        textAlign: 'center',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
+        padding: '4.7px 0',
+        height: 28,
+        color: 'white'
+    },
+    taxAmount: {
+        width: "10%",
+        textAlign: 'center',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
+        padding: '4.7px 0',
+        height: 28,
     },
     total: {
-        width: '22%',
-        textAlign: 'right',
-        padding: 4.5,
+        width: '15%',
+        textAlign: 'center',
+        padding: '4.7px 0',
+        height: 28,
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
 });
-
 
 const InvoiceTableFooter = ({ items }) => {
     const total = items.map(item => item.quantity * item.price)
         .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    const gstTotal = items.map(item => (item.quantity * item.price * item.tax_rate / 100))
+        .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
     return (
         <View style={styles.row}>
             <Text style={styles.description}>TOTAL</Text>
-            <Text style={styles.total}>{Number.parseFloat(total).toFixed(2)}</Text>
+            <Text style={styles.net}>{`$${total}`}</Text>
+            <Text style={styles.empty}>-</Text>
+            <Text style={styles.taxAmount}>{`$${gstTotal.toFixed(2)}`}</Text>
+            <Text style={styles.total}>{`$${total + gstTotal}`}</Text>
         </View>
     )
 };

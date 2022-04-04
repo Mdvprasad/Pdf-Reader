@@ -19,7 +19,9 @@ const styles = StyleSheet.create({
         borderRightColor: borderColor,
         borderRightWidth: 1,
         alignItems: 'center',
-        padding: 5
+        padding: '5px 0',
+        borderLeftColor: borderColor,
+        borderLeftWidth: 1,
     },
     description: {
         width: '30%',
@@ -47,12 +49,14 @@ const styles = StyleSheet.create({
         borderRightColor: borderColor,
         borderRightWidth: 1,
         alignItems: 'center',
-        padding: 5
+        padding: '5px 0'
     },
     amount: {
-        width: '12%',
+        width: '22%',
         alignItems: 'center',
-        padding: 5
+        padding: '5px 0',
+        borderRightColor: borderColor,
+        borderRightWidth: 1,
     },
 });
 
@@ -62,8 +66,8 @@ const InvoiceTableHeader = () => (
         <Text style={styles.description}>Item Description</Text>
         <Text style={styles.unit}>Unit Price</Text>
         <Text style={styles.qty}>Qty</Text>
-        <Text style={styles.rate}>Net</Text>
-        <Text style={styles.amount}>Total</Text>
+        <Text style={styles.rate}>Net Amount</Text>
+        <Text style={styles.amount}>Total Amount</Text>
     </View>
 );
 

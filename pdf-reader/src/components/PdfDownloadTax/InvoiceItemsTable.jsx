@@ -7,23 +7,25 @@ import InvoiceTableFooter from './InvoiceTableFooter'
 import InvoiceAmountInWords from './InvoiceAmountInWords';
 import InvoiceDigitalMessage from './InvoiceDigitalMessage';
 
-const tableRowsCount = 12;
+const tableRowsCount = 20;
 
 const styles = StyleSheet.create({
     tableContainer: {
         flexDirection: 'row',
         flexWrap: 'wrap',
         marginTop: 24,
-        borderWidth: 1,
-        borderColor: 'black',
+        borderTopWidth: 1,
+        borderTopColor: 'black',
+        borderBottomWidth: 1,
+        borderBottomColor: 'black',
     },
 });
-
+// enable InvoiceTableBlankSpace component if needed for future use
 const InvoiceItemsTable = ({ invoice }) => (
     <View style={styles.tableContainer}>
         <InvoiceTableHeader />
         <InvoiceTableRow items={invoice.ordered_items} />
-        <InvoiceTableBlankSpace rowsCount={tableRowsCount - invoice.ordered_items.length} />
+        {/* <InvoiceTableBlankSpace rowsCount={tableRowsCount - invoice.ordered_items.length} /> */}
         <InvoiceTableFooter items={invoice.ordered_items} />
         <InvoiceAmountInWords items={invoice.ordered_items} />
         <InvoiceDigitalMessage message="This is a digitally generated invoice." />

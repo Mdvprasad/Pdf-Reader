@@ -14,19 +14,14 @@ const styles = StyleSheet.create({
         fontStyle: 'bold',
     },
     description: {
-        width: '35%',
-        textAlign: 'center',
+        width: '100%',
+        textAlign: 'left',
         borderRightColor: borderColor,
         borderRightWidth: 1,
         padding: 4.5,
-
-    },
-    total: {
-        width: '65%',
-        textAlign: 'left',
-        padding: 4.5,
-
-    },
+        borderLeftColor: borderColor,
+        borderLeftWidth: 1,
+    }
 });
 
 
@@ -42,11 +37,12 @@ const InvoiceAmountInWords = ({ items }) => {
     });
     const total = items.map(item => item.quantity * item.price)
         .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
-    let words = toWords.convert(total);
+    const gstTotal = items.map(item => (item.quantity * item.price * item.tax_rate / 100))
+        .reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+    let words = toWords.convert(total + gstTotal).replace("Dollars", "USD");
     return (
         <View style={styles.row}>
-            <Text style={styles.description}>AMOUNT IN WORDS</Text>
-            <Text style={styles.total}>{words}</Text>
+            <Text style={styles.description}>{`Amount In Words: ${words}`}</Text>
         </View>
     )
 };
