@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Steps for React PDF Download application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install React PDF package
+Make Data as per the requirement(if starting from scratch)
+Now make files separate for PDF document, download and invoice
+Make design as per UI requirement
 
-## Available Scripts
+1. Install React PDF package  @react-pdf/renderer
+In @react-pdf/renderer we have multiple components to make our pdf more ui friendly.
 
-In the project directory, you can run:
+We will use these below pdf package components to make the pdf for our requirement
 
-### `npm start`
+<Document /> represents the PDF document itself. It must be the root of the document tree element structure. It should only contain children of type <Page /> component.
+<Page /> represents a single page within a PDF document. <Page /> has a default size of A4 with a portrait orientation.
+<View /> is the fundamental component used for building the UI. It is designed to be nested inside other views and can have zero or more child components.
+<Text /> component is used for displaying text. It supports nesting of other <Text /> components.
+<Image /> component is used for displaying images. Images may be JPG, PNG or base64 encoded image strings.
+<BlobProvider /> Easy and declarative way of getting document's blob data without showing it on screen
+2. Make Sample data as per the requirement to render as pdf(in this repo we have sample json file but we can replace them with Api also)
+3. Make Separate files PdfDocument, PdfDownload and invoice files . 
+Here Pdf Document is representation of document component made from the react pdf package (follow documentation from React PDF)
+4. Making UI. As per the UI requirement we will create the invoice component.
+We need use flexbox css here for most of the parts and StyleSheet component to apply the styles for the UI components
+We will use Document,Page,View,Text,Image components from react pdf package
+Document meant for entire PDF file
+Page is rendering the respective page,
+View here acts as block we will use thing as  separator , container etc,
+Text component to display the text, values etc
+Image to hold Logo(in this repo you can replace your logo which is in assets directory with same name as logo.jpeg)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Useful points if you want the header all along the remaining pages just add fixed to view or text or whichever you wanted then it will remains for all the pages 
+For this project we just added another package to convert numbers to text for(Amount in words section) “to-words”  To change value of currency update localeCode to ‘en-US’ to get US dollars                                                                                                                  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
